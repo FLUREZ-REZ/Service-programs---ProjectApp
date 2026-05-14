@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weatherapp/features/navigation/presentation/pages/add_page.dart';
+import 'package:weatherapp/features/navigation/presentation/pages/gallery_page.dart';
+import 'package:weatherapp/features/navigation/presentation/pages/messages_page.dart';
+import 'package:weatherapp/features/navigation/presentation/pages/profile_page.dart';
 import 'package:weatherapp/features/navigation/presentation/providers/navigation_provider.dart';
+
 
 
 class BottomNavbar extends StatelessWidget {
@@ -12,10 +17,10 @@ class BottomNavbar extends StatelessWidget {
     final currentIndex = provider.currentIndex;
 
     final items = [
-      {'icon': 'assets/mycar.png', 'label': 'گالری'},
-      {'icon': 'assets/mycar.png', 'label': 'افزودن'},
-      {'icon': 'assets/mycar.png', 'label': 'پیام‌ها'},
-      {'icon': 'assets/mycar.png', 'label': 'پروفایل'},
+      {'icon': 'assets/credit-card2.png', 'label': 'کارت به کارت'},
+      {'icon': 'assets/mycar.png', 'label': 'خدمات خودرو'},
+      {'icon': 'assets/credit-card.png', 'label': 'خرید شارژ'},
+      {'icon': 'assets/bill5.png', 'label': 'قبض ها'},
     ];
 
     return Align(
@@ -40,7 +45,37 @@ class BottomNavbar extends StatelessWidget {
             final isSelected = index == currentIndex;
 
             return GestureDetector(
-              onTap: () => provider.changeIndex(index),
+              onTap: () {
+                provider.changeIndex(index);
+
+                // تغییر صفحه با Navigator
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const GalleryPage()),
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const AddPage()),
+                    );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const MessagesPage()),
+                    );
+                    break;
+                  case 3:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const ProfilePage()),
+                    );
+                    break;
+                }
+              },
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [

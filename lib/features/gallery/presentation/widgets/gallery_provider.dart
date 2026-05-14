@@ -25,85 +25,39 @@ class GalleryProvider extends ChangeNotifier {
 
     _items = [
       GalleryItem(
-        imagePath: 'assets/Teamwork.png',
+        imagePath: 'assets/bag3.png',
         title: 'طلوع آفتاب',
       ),
       GalleryItem(
-        imagePath: 'assets/Target.png',
+        imagePath: 'assets/Marketing-Idea.png',
         title: 'هوای ابری',
       ),
       GalleryItem(
-        imagePath: 'assets/Schedule-Plan.png',
-        title: 'باران ملایم',
+        imagePath: 'assets/price.png',
+        title: 'جوایز شگفت انگیز',
       ),
       GalleryItem(
-        imagePath: 'assets/Rejected.png',
+        imagePath: 'assets/Target.png',
         title: 'غروب زیبا',
       ),
       GalleryItem(
-        imagePath: 'assets/Raise-Fund.png',
-        title: 'شب آرام',
+        imagePath: 'assets/Commissions.png',
+        title: 'غروب زیبا',
       ),
       GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
+        imagePath: 'assets/Schedule-Plan.png',
+        title: 'غروب زیبا',
       ),
       GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
+        imagePath: 'assets/Solution.png',
+        title: 'غروب زیبا',
       ),
       GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
+        imagePath: 'assets/Teamwork.png',
+        title: 'غروب زیبا',
       ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
-      GalleryItem(
-        imagePath: 'assets/Money-Growth.png',
-        title: 'هوای پاک',
-      ),
+
+
     ];
 
     _isLoading = false;

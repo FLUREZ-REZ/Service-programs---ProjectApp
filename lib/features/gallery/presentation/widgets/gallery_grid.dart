@@ -32,63 +32,70 @@ class GalleryGrid extends StatelessWidget {
         final cardWidth = (width - (spacing * (crossAxisCount + 1))) / crossAxisCount;
 
 
-        final imageHeight = cardWidth * 0.74;
+        final imageHeight = cardWidth * 0.7;
 
 
-        final titleFontSize = (width < 360) ? 11.0 : 9.1;
+        final titleFontSize = (width < 360) ? 10.0 : 7.7;
 
-        return GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: spacing, vertical: spacing),
-          itemCount: items.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: crossAxisCount,
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 8,
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: spacing, vertical: spacing),
+            itemCount: items.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
 
 
-          ),
-          itemBuilder: (context, index) {
-            final item = items[index];
+            ),
+            itemBuilder: (context, index) {
+              final item = items[index];
 
-            return Material(
-              color: Colors.transparent,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
+              return Material(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: const Color.fromRGBO(25, 30, 40, 1),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
 
-                  SizedBox(
-                    height: imageHeight,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(14),
-                      child: Image.asset(
-                        item.imagePath,
-                        fit: BoxFit.cover,
+                    SizedBox(
+                      height: imageHeight,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(14),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Image.asset(
+                            item.imagePath,
+                            fit: BoxFit.fitHeight,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
 
-                  const SizedBox(height: 6),
+                    const SizedBox(height: 6),
 
 
-                  Text(
-                    item.title,
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: titleFontSize,
-                      fontFamily: 'iran',
-                      fontWeight: FontWeight.w200,
-                      height: 1.2,
+                    Text(
+                      item.title,
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: titleFontSize,
+                        fontFamily: 'iran',
+                        fontWeight: FontWeight.w200,
+                        height: 1.2,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            );
-          },
+                  ],
+                ),
+              );
+            },
+          ),
         );
       },
     );
