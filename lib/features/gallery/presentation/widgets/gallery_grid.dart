@@ -23,7 +23,7 @@ class GalleryGrid extends StatelessWidget {
         final width = constraints.maxWidth;
 
 
-        const crossAxisCount = 4;
+        const crossAxisCount = 3;
 
 
         final spacing = (width < 360) ? 6.0 : 8.0;
@@ -56,7 +56,7 @@ class GalleryGrid extends StatelessWidget {
 
               return Material(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: const Color.fromRGBO(25, 30, 40, 1),
+                color: const Color.fromRGBO(13, 15, 20, 1),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [

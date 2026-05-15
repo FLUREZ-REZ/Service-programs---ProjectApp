@@ -26,11 +26,11 @@ class GalleryProvider extends ChangeNotifier {
     _items = [
       GalleryItem(
         imagePath: 'assets/bag3.png',
-        title: 'طلوع آفتاب',
+        title: 'لذت خرید',
       ),
       GalleryItem(
         imagePath: 'assets/Marketing-Idea.png',
-        title: 'هوای ابری',
+        title: 'قبض برق',
       ),
       GalleryItem(
         imagePath: 'assets/price.png',
@@ -38,23 +38,39 @@ class GalleryProvider extends ChangeNotifier {
       ),
       GalleryItem(
         imagePath: 'assets/Target.png',
-        title: 'غروب زیبا',
+        title: 'راه سرمایه گذاری',
       ),
       GalleryItem(
         imagePath: 'assets/Commissions.png',
-        title: 'غروب زیبا',
+        title: 'نیکوکاری',
       ),
       GalleryItem(
         imagePath: 'assets/Schedule-Plan.png',
-        title: 'غروب زیبا',
+        title: 'برنامه ریزی',
       ),
       GalleryItem(
         imagePath: 'assets/Solution.png',
-        title: 'غروب زیبا',
+        title: 'انواع بیمه',
       ),
       GalleryItem(
         imagePath: 'assets/Teamwork.png',
-        title: 'غروب زیبا',
+        title: 'شراکت',
+      ),
+      GalleryItem(
+        imagePath: 'assets/whale.png',
+        title: 'سرگرمی',
+      ),
+      GalleryItem(
+        imagePath: 'assets/Market-Prediction.png',
+        title: 'بازار ارزی',
+      ),
+      GalleryItem(
+        imagePath: 'assets/Reward.png',
+        title: 'قرعه کشی',
+      ),
+      GalleryItem(
+        imagePath: 'assets/Raise-Fund.png',
+        title: 'سرمایه گذاری',
       ),
 
 

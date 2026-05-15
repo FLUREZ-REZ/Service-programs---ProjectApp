@@ -20,14 +20,14 @@ class BottomNavbar extends StatelessWidget {
       {'icon': 'assets/credit-card2.png', 'label': 'کارت به کارت'},
       {'icon': 'assets/mycar.png', 'label': 'خدمات خودرو'},
       {'icon': 'assets/credit-card.png', 'label': 'خرید شارژ'},
-      {'icon': 'assets/bill5.png', 'label': 'قبض ها'},
+
     ];
 
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 15),
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+        margin: const EdgeInsets.only(bottom: 15 , left: 30 , right: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: const Color.fromRGBO(25, 30, 40, 1),
           borderRadius: BorderRadius.circular(24),
@@ -48,7 +48,7 @@ class BottomNavbar extends StatelessWidget {
               onTap: () {
                 provider.changeIndex(index);
 
-                // تغییر صفحه با Navigator
+
                 switch (index) {
                   case 0:
                     Navigator.push(
@@ -81,8 +81,8 @@ class BottomNavbar extends StatelessWidget {
                 children: [
                   Image.asset(
                     items[index]['icon']!,
-                    width: 40,
-                    height: 40,
+                    width: 50,
+                    height: 50,
                   ),
                   const SizedBox(height: 4),
                   Text(

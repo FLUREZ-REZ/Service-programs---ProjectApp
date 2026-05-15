@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weatherapp/features/slider/presentation/my_slider.dart';
 
-// Import های قبلی شما
+
 import 'package:weatherapp/features/slider/presentation/responsive_slider.dart';
 import 'package:weatherapp/features/slider/data/slider_data_source.dart';
 import 'package:weatherapp/features/slider/domain/slider_repository.dart';
@@ -11,7 +12,7 @@ import 'package:weatherapp/features/slider/presentation/slider_provider.dart';
 import 'package:weatherapp/features/gallery/presentation/widgets/gallery_grid.dart';
 import 'package:weatherapp/features/gallery/presentation/widgets/gallery_provider.dart';
 
-// import ویجت Navbar و Provider آن
+
 import 'package:weatherapp/features/navigation/presentation/widgets/bottom_navbar.dart'; // مسیر این فایل را چک کنید
 import 'package:weatherapp/features/navigation/presentation/providers/navigation_provider.dart'; // مسیر این فایل را چک کنید
 
@@ -20,9 +21,9 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider( // این MultiProvider باید کل widget Scaffold را بگیرد
+    return MultiProvider(
       providers: [
-        // Provider های قبلی شما
+
         ChangeNotifierProvider(
           create: (_) {
             final dataSource = SliderDataSource();
@@ -69,9 +70,9 @@ class Homepage extends StatelessWidget {
               fit: BoxFit.contain,
             ),
           ),
-          body: Stack( // <<< از Stack استفاده می‌کنیم تا Navbar را پایین قرار دهیم
+          body: Stack(
             children: [
-              // محتوای اصلی صفحه شما
+
               SingleChildScrollView(
                 child: Column(
                   children: [
@@ -137,17 +138,19 @@ class Homepage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 12.0),
                       child: GalleryGrid(),
                     ),
-                    const SizedBox(height: 20),
-                    // برای اینکه Navbar پایین بمونه و بقیه محتوا اسکرول بشه،
-                    // بهتره محتوای اصلی رو داخل SingleChildScrollView بزاری
-                    // و Navbar را مستقیم داخل Stack قرار بدی
-                    // این SizedBox اینجا دیگه لازم نیست و حذف میشه:
-                    // const SizedBox(height: 100), // مثلاً برای فضای کافی Navbar
+                    const SizedBox(height: 10),
+
+                    MySliderWithIndicator(),
+
                   ],
                 ),
               ),
-              // ویجت Navbar ثابت پایین صفحه
+
+
               const BottomNavbar(),
+
+
+
             ],
           ),
         ),
