@@ -72,6 +72,10 @@ class GalleryProvider extends ChangeNotifier {
         imagePath: 'assets/Raise-Fund.png',
         title: 'سرمایه گذاری',
       ),
+      GalleryItem(
+        imagePath: 'assets/more2.png',
+        title: 'همه خدمات',
+      ),
 
 
     ];

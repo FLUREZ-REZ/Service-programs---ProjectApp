@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weatherapp/features/slider/presentation/images-slider-horizontal.dart';
 import 'package:weatherapp/features/slider/presentation/my_slider.dart';
 
 
@@ -40,7 +41,7 @@ class Homepage extends StatelessWidget {
             return provider;
           },
         ),
-        // Provider جدید برای Navigation
+
         ChangeNotifierProvider(create: (_) => NavigationProvider()),
       ],
       child: Directionality(
@@ -133,14 +134,27 @@ class Homepage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 12.0),
                       child: ResponsiveSlider(),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 5),
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.0),
                       child: GalleryGrid(),
                     ),
                     const SizedBox(height: 10),
+                    
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 30),
+                        child: Text("فروشگاه ها" , style: TextStyle(color: Colors.white , fontFamily: 'iran'),),
+                      ),
+                    ),
+                    SizedBox(height: 15,),
+                    
+                    CircularImageSlider(),
 
                     MySliderWithIndicator(),
+                    SizedBox(height:   MediaQuery.of(context).size.height* 0.15,),
+
 
                   ],
                 ),
