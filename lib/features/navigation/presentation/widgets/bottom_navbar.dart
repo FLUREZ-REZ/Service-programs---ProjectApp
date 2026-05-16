@@ -29,7 +29,7 @@ class BottomNavbar extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 15 , left: 30 , right: 30),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
-          color: const Color.fromRGBO(25, 30, 40, 1),
+          color: const Color.fromRGBO(48, 57, 77, 1),
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
@@ -88,10 +88,10 @@ class BottomNavbar extends StatelessWidget {
                   Text(
                     items[index]['label']!,
                     style: TextStyle(
-                      color: isSelected ? Colors.white : Colors.white54,
-                      fontWeight:
-                      isSelected ? FontWeight.bold : FontWeight.normal,
-                      fontSize: 10,
+                      color: Colors.white70 ,
+                      fontFamily: 'iran' ,
+                      fontSize: 10 ,
+
                     ),
                   ),
                 ],

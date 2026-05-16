@@ -11,7 +11,10 @@ class GalleryGrid extends StatelessWidget {
     final items = provider.items;
 
     if (provider.isLoading && items.isEmpty) {
-      return const Center(child: CircularProgressIndicator());
+      return const CircularProgressIndicator(
+        color:  Colors.white60
+
+      );
     }
 
     if (items.isEmpty) {
