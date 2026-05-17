@@ -25,12 +25,25 @@ class GalleryProvider extends ChangeNotifier {
 
     _items = [
       GalleryItem(
+        imagePath: 'assets/Marketing-Idea.png',
+        title: 'قبض برق',
+      ),
+      GalleryItem(
+        imagePath: 'assets/credit-card.png',
+        title: 'خرید شارژ',
+      ),
+      GalleryItem(
         imagePath: 'assets/bag3.png',
         title: 'لذت خرید',
       ),
       GalleryItem(
-        imagePath: 'assets/Marketing-Idea.png',
-        title: 'قبض برق',
+        imagePath: 'assets/soldier3.png',
+        title: 'خدمات سربازی',
+
+      ),
+      GalleryItem(
+        imagePath: 'assets/Funds.png',
+        title: 'قبض آب',
       ),
       GalleryItem(
         imagePath: 'assets/price.png',
