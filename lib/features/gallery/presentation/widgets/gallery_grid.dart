@@ -57,47 +57,55 @@ class GalleryGrid extends StatelessWidget {
             itemBuilder: (context, index) {
               final item = items[index];
 
-              return Material(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: const Color.fromRGBO(13, 15, 20, 1),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-
-                    SizedBox(
-                      height: imageHeight,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(14),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Image.asset(
-                            item.imagePath,
-                            fit: BoxFit.fitHeight,
+              return InkWell(
+                borderRadius: BorderRadius.circular(10),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => item.page),
+                  );
+                },
+                child: Material(
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  color: const Color.fromRGBO(13, 15, 20, 1),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      SizedBox(
+                        height: imageHeight,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(14),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              item.imagePath,
+                              fit: BoxFit.fitHeight,
+                            ),
                           ),
                         ),
                       ),
-                    ),
 
-                    const SizedBox(height: 6),
+                      const SizedBox(height: 6),
 
-
-                    Text(
-                      item.title,
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: titleFontSize,
-                        fontFamily: 'iran',
-                        fontWeight: FontWeight.w200,
-                        height: 1.2,
+                      Text(
+                        item.title,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: titleFontSize,
+                          fontFamily: 'iran',
+                          fontWeight: FontWeight.w200,
+                          height: 1.2,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               );
             },
+
           ),
         );
       },
