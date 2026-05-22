@@ -1,77 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:marquee/marquee.dart';
+import 'package:provider/provider.dart';
+import 'package:weatherapp/core/di/injection.dart';
 import 'package:weatherapp/features/auth/presentation/pages/home_page.dart';
+import 'package:weatherapp/features/bargh_service/presentation/pages/bill_view.dart';
+import 'package:weatherapp/features/bargh_service/presentation/provider/bill_provider.dart';
 
 class MarketingIdea extends StatelessWidget {
   const MarketingIdea({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      backgroundColor: Colors.yellowAccent ,
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+    final size = MediaQuery.of(context).size;
+    return ChangeNotifierProvider(
+      create: (_) => sl<BillProvider>(),
 
-              Image.asset("assets/Marketing-Idea.png" , width: MediaQuery.of(context).size.width * 0.3, fit: BoxFit.contain,),
-              SizedBox(height: 10,),
-              SizedBox(
-                height: screenHeight * 0.05,
-                child: Marquee(
-                  text: "صفحه قبض برق",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: screenWidth * 0.04,
-                      fontFamily: 'iran'
-                  ),
-                  scrollAxis: Axis.horizontal,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  blankSpace: 20.0,
-                  velocity: 30.0,
-                  textDirection: TextDirection.ltr,
-                  pauseAfterRound: const Duration(seconds: 1),
-                  startPadding: 10.0,
-                  accelerationDuration: const Duration(seconds: 1),
-                  accelerationCurve: Curves.easeIn,
-                  decelerationDuration: const Duration(milliseconds: 500),
-                  decelerationCurve: Curves.easeOut,
-                ),
-              ),
-              SizedBox(height: screenHeight * 0.03),
-              SizedBox(
-                width: screenWidth * 0.6,
-                height: screenHeight * 0.07,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.red,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
-                  },
-                  child: const Text(
-                    "بازگشت",
-                    style: TextStyle(
-                        color: Colors.black ,
-                        fontSize: 18,
-                        fontFamily: 'iran'
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+      child: Scaffold(
+
+        appBar: AppBar(
+
+          leading: IconButton(onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
+          }, icon: Icon(Icons.arrow_back_ios_new , color: Colors.white,)),
+          backgroundColor: Color.fromRGBO(25, 30, 40, 1),
         ),
+
+        body: Column(
+
+
+          children: [
+            Container(
+              color: Color.fromRGBO(59, 71, 94, 1),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.05,
+                vertical: size.height * 0.03,
+              ),
+              child: Text("میتوانید شناسه را در سامانه برق من و هم در قبض برق خود مشاهده کنید !" , textDirection: TextDirection.rtl, style: TextStyle(color: Colors.white , fontFamily: 'iran' , fontSize: 13),),
+            ),
+            Expanded(child: BillView())
+          ],
+        ),
+
       ),
+
     );
   }
 }

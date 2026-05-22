@@ -47,6 +47,8 @@ dependencies:
   hydro_glass_nav_bar: ^1.0.0-pre.1
   carousel_slider: ^5.0.0
   marquee: ^2.3.0
+  flutter_riverpod: ^3.3.1
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:

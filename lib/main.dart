@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:weatherapp/core/splash_screen/splash_screen.dart';
+import 'package:weatherapp/core/di/injection.dart';
 import 'package:weatherapp/features/auth/presentation/pages/home_page.dart';
+
 import 'core/network/api_client.dart';
 import 'features/auth/data/datasource/auth_remote_datasource.dart';
 import 'features/auth/data/repository/auth_repository_impl.dart';
@@ -13,8 +14,11 @@ import 'features/auth/presentation/provider/auth_provider.dart';
 
 
 
-void main() {
+void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
+  await initDependencies();
+
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,

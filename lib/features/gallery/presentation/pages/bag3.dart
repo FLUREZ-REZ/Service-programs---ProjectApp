@@ -11,7 +11,7 @@ class bag3 extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.grey ,
+      backgroundColor: Colors.blueAccent ,
       body: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
@@ -19,12 +19,12 @@ class bag3 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
 
-              Image.asset("assets/bag3.png" , width: MediaQuery.of(context).size.width * 0.3, fit: BoxFit.contain,),
-              SizedBox(height: 20,),
+              Image.asset("assets/Funds.png" , width: MediaQuery.of(context).size.width * 0.3, fit: BoxFit.contain,),
+              SizedBox(height: 10,),
               SizedBox(
                 height: screenHeight * 0.05,
                 child: Marquee(
-                  text: "صفحه نمایش خرید",
+                  text: "صفحه خرید ",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: screenWidth * 0.04,
@@ -61,7 +61,7 @@ class bag3 extends StatelessWidget {
                   child: const Text(
                     "بازگشت",
                     style: TextStyle(
-                        color: Color.fromRGBO(25, 35, 45, 1),
+                        color: Colors.blueAccent ,
                         fontSize: 18,
                         fontFamily: 'iran'
                     ),
