@@ -85,8 +85,8 @@ class _ResponsiveSliderState extends State<ResponsiveSlider> {
                 margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  // رنگ نقطه فعال پررنگ‌تر و بقیه کم‌رنگ‌تر
-                  color: Theme.of(context).primaryColor.withOpacity(
+
+                  color: Theme.of(context).colorScheme.onPrimary.withOpacity(
                       _current == entry.key ? 0.9 : 0.4),
                 ),
               ),

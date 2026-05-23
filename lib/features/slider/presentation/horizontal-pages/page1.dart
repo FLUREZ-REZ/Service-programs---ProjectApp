@@ -23,7 +23,7 @@ class Page1 extends StatelessWidget {
                 child: Marquee(
                   text: "در دسترس بزودی",
                   style: TextStyle(
-                      color: Colors.white,
+
                       fontSize: screenWidth * 0.04,
                       fontFamily: 'iran'
                   ),
@@ -46,8 +46,7 @@ class Page1 extends StatelessWidget {
                 height: screenHeight * 0.07,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.red,
+
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -58,7 +57,6 @@ class Page1 extends StatelessWidget {
                   child: const Text(
                     "بازگشت",
                     style: TextStyle(
-                        color: Colors.blueAccent,
                         fontSize: 18,
                         fontFamily: 'iran'
                     ),

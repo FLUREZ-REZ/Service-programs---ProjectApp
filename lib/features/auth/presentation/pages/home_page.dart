@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
+import 'package:weatherapp/core/di/injection_theme.dart';
+import 'package:weatherapp/core/theme_manager.dart';
 import 'package:weatherapp/features/slider/presentation/images-slider-horizontal.dart';
 import 'package:weatherapp/features/slider/presentation/my_slider.dart';
 
@@ -15,6 +18,7 @@ import 'package:weatherapp/features/gallery/presentation/widgets/gallery_provide
 import 'package:weatherapp/features/navigation/presentation/widgets/bottom_navbar.dart'; // مسیر این فایل را چک کنید
 import 'package:weatherapp/features/navigation/presentation/providers/navigation_provider.dart';
 
+
 class Homepage extends StatelessWidget {
   Homepage({super.key});
 
@@ -26,6 +30,8 @@ class Homepage extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
+
+
 
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -60,11 +66,10 @@ class Homepage extends StatelessWidget {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           key: _scaffoldKey,
-          backgroundColor: Colors.black,
           appBar: AppBar(
-            backgroundColor: const Color.fromRGBO(25, 30, 40, 1),
+            backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             leading: IconButton(
-              icon: const Icon(Icons.menu, color: Colors.white),
+              icon: const Icon(Icons.menu,),
 
               onPressed: () {
                 _scaffoldKey.currentState?.openDrawer();
@@ -72,12 +77,13 @@ class Homepage extends StatelessWidget {
             ),
             actions: [
               IconButton(
-                icon: const Icon(Icons.qr_code_scanner_rounded, color: Colors.white),
+                icon: const Icon(Icons.qr_code_scanner_rounded,),
                 onPressed: () {},
               ),
               IconButton(
-                icon: const Icon(CupertinoIcons.search, color: Colors.white),
-                onPressed: () {},
+                icon:  Icon(Icons.search ,
+                ),
+                onPressed: (){},
               ),
             ],
             centerTitle: true,
@@ -89,17 +95,17 @@ class Homepage extends StatelessWidget {
           ),
 
           drawer: Drawer(
-            backgroundColor: const Color.fromRGBO(25, 30, 40, 1),
+
             child: Column(
               children: [
-                // هدر بالا
+
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.only(top: 50, right: 16, left: 16, bottom: 16),
                   color: const Color.fromRGBO(25, 40, 50, 1),
                   child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.end, // حذف شد برای چپ چین شدن
                     children: [
+
                       CircleAvatar(
                         radius: 26,
                         backgroundColor: Color.fromRGBO(25, 30, 40, 1),
@@ -118,6 +124,7 @@ class Homepage extends StatelessWidget {
 
                             ),
                           ),
+
                           const SizedBox(height: 4),
                           const Text(
                             '09909378970',
@@ -127,36 +134,51 @@ class Homepage extends StatelessWidget {
                               fontSize: 9,
                             ),
                           ),
+
                         ],
                       ),
+
+
                     ],
                   ),
                 ),
 
                 const SizedBox(height: 20),
 
-                // آیتم‌های منو
+
                 Expanded(
                   child: ListView(
                     padding: EdgeInsets.zero,
                     children: [
                       ListTile(
-                        leading: const Icon(CupertinoIcons.square_list, color: Colors.white),
-                        title: Text('تراکنش ها', style: TextStyle(color: Colors.white , fontFamily: 'iran' , fontSize: itemFonts)),
+                        leading: IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.square_list)),
+                        title: Text('تراکنش ها', style: TextStyle( fontFamily: 'iran' , fontSize: itemFonts)),
                       ),
                       ListTile(
-                        leading: const Icon(Icons.settings, color: Colors.white),
-                        title: Text('تنظیمات', style: TextStyle(color: Colors.white , fontFamily: 'iran' , fontSize: itemFonts)),
+                        leading: IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
+                        title: Text('تنظیمات', style: TextStyle( fontFamily: 'iran' , fontSize: itemFonts)),
                       ),
                       ListTile(
-                        leading: const Icon(CupertinoIcons.bell, color: Colors.white),
-                        title: Text('اعلانات', style: TextStyle(color: Colors.white , fontFamily: 'iran' , fontSize: itemFonts)),
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.contact_support_outlined, color: Colors.white),
-                        title: Text('راهنما', style: TextStyle(color: Colors.white , fontFamily: 'iran' , fontSize: itemFonts)),
+                        leading: IconButton(
+                          icon:  Icon(sl<ThemeManager>().themeMode == ThemeMode.dark
+                              ? Icons.light_mode
+                              : Icons.dark_mode
+                          ),
+                          onPressed: ()=> sl<ThemeManager>().toggleTheme(),
+                        ),
+                        title: Text('روشنایی', style: TextStyle( fontFamily: 'iran' , fontSize: itemFonts)),
 
                       ),
+                      ListTile(
+                        leading: IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none)),
+                        title: Text('اعلانات', style: TextStyle( fontFamily: 'iran' , fontSize: itemFonts)),
+                      ),
+                      ListTile(
+                        leading: IconButton(onPressed: (){}, icon: Icon(Icons.contact_support_outlined)),
+                        title: Text('راهنما', style: TextStyle(fontFamily: 'iran' , fontSize: itemFonts)),
+
+                      ),
+
                     ],
                   ),
                 ),
@@ -190,15 +212,9 @@ class Homepage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: const Color.fromRGBO(25, 30, 40, 1),
+                          color: Theme.of(context).cardColor,
                           borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              blurRadius: 5,
-                              offset: const Offset(0, 3),
-                            ),
-                          ],
+
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -214,7 +230,6 @@ class Homepage extends StatelessWidget {
                                 const Text(
                                   "کیف پول",
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontFamily: 'iran',
                                     fontSize: 12,
                                   ),
@@ -226,7 +241,6 @@ class Homepage extends StatelessWidget {
                                 const SizedBox(width: 12),
                                 Icon(
                                   Icons.arrow_forward_ios_sharp,
-                                  color: Colors.white,
                                   size: MediaQuery.of(context).size.width * 0.05,
                                 ),
                               ],
@@ -252,7 +266,7 @@ class Homepage extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 30),
                         child: Text(
                           "فروشگاه ها",
-                          style: TextStyle(color: Colors.white, fontFamily: 'iran'),
+                          style: TextStyle( fontFamily: 'iran'),
                         ),
                       ),
                     ),

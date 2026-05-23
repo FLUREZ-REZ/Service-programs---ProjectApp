@@ -60,7 +60,7 @@ class CircularImageSlider extends StatelessWidget {
                 child: Text(
                   items[index]['title'],
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 10 , color: Colors.white , fontFamily: 'iran'),
+                  style: const TextStyle(fontSize: 10 , fontFamily: 'iran'),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),

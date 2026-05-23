@@ -67,7 +67,7 @@ class GalleryGrid extends StatelessWidget {
                 },
                 child: Material(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  color: const Color.fromRGBO(13, 15, 20, 1),
+
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -93,7 +93,7 @@ class GalleryGrid extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          color: Colors.white,
+
                           fontSize: titleFontSize,
                           fontFamily: 'iran',
                           fontWeight: FontWeight.w200,
