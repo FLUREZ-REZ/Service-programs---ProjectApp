@@ -22,7 +22,7 @@
   <img src="https://github.com/user-attachments/assets/5fc0a27e-27fa-4882-b3fa-0f5d1c06df24" width="30%" />
   <img src="https://github.com/user-attachments/assets/f762ffcf-f83b-4d1a-8fe3-316876f8b2ad" width="30%" />
   <a href="https://www.aparat.com/your_video">
-  <img src="https://github.com/user-attachments/assets/af053b6f-f643-4464-8255-a78b6758c18a" width="30%">
+  <img src="https://www.aparat.com/v/pxz7997" width="30%">
 </a>
 </p>
 
